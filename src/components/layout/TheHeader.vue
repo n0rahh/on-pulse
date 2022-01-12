@@ -13,7 +13,7 @@
             </v-toolbar-title>
             <template v-slot:extension>
                 <v-tabs grow>
-                    <v-tab to="/home">Aktualności</v-tab>
+                    <v-tab to="/home">Strona Główna</v-tab>
                     <v-tab to="/ads">Ogłoszenia</v-tab>
                     <v-tab to="/candidates">Kandydaci</v-tab>
                     <v-tab to="/games">Take a break!</v-tab>
