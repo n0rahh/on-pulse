@@ -30,8 +30,8 @@
                     <v-btn text v-on="on" color="white">
                         <v-icon left>expand_more</v-icon>
                         <v-avatar class="grey lighten-2" size="30">
-                        <img src="../../assets/avatars/avatar-test.png" />
-                    </v-avatar>
+                            <img src="../../assets/avatars/avatar-test.png" />
+                        </v-avatar>
                     </v-btn>
                 </template>
                 <v-list>
@@ -86,3 +86,10 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+.logo {
+    width: 50px;
+    height: 20px;
+}
+</style>
