@@ -6,6 +6,7 @@ import Ad from '../pages/Ad.vue';
 import Candidates from '../pages/Candidates.vue';
 import BreakZone from '../pages/BreakZone.vue';
 import About from '../pages/About.vue';
+import Login from '../pages/Login.vue';
 
 Vue.use(VueRouter);
 
@@ -18,6 +19,11 @@ const routes = [
     path: '/home',
     name: 'Home',
     component: Home
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
   },
   {
     path: '/ads',
