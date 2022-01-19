@@ -15,10 +15,11 @@
 
         <v-row class="second-page">
             <v-col cols='12' md='12' sm='12' xs='12' lg='12' xl='6' class="mt-15 ">
-                <p class="mt-15 headline">
-                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum veritatis itaque enim dicta voluptate magni libero adipisci! Tempore molestias, et tempora autem temporibus nulla alias possimus, dignissimos illum quidem explicabo.
+                <p class="pa-5 mt-15 headline">
+                   Powiadom właściwe osoby, że jesteś otwarty(-a) na oferty pracy. <br>
+                   Dzięki funkcji „Otwarty(-a) na oferty pracy” możesz prywatnie poinformować rekruterów lub publicznie podzielić się ze społecznością LinkedIn informacją, że szukasz nowych możliwości kariery.
                  </p>
-                 <div align="right" class="mt-15 button">
+                 <div align="right" class="pa-5 mt-15 button">
                     <v-btn outlined color="deep-purple darken-2">GET STARTED</v-btn>
                  </div>
                  

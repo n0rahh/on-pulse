@@ -55,16 +55,17 @@
                     <div class="subtitle-1 white--text justify-center mt-5">USER NAME</div>
                 </v-col>
             </v-container>
-            <!-- <v-list>
-                <v-list-item v-for="link in links" :key="link.text" router :to="link.route">
+            <v-list>
+                <v-list-item v-for="item in navigationList" :key="item.text" router :to="item.route">
                     <v-list-item-action>
-                        <v-icon class="blue--text text--darken-4">{{ link.icon }}</v-icon>
+                        <v-icon class=" white--text">{{ item.icon }}</v-icon>
                     </v-list-item-action>
                     <v-list-item-content>
-                        <v-list-item-title class="blue--text text--darken-4">{{ link.text }}</v-list-item-title>
+                        <v-list-item-title class=" white--text">{{ item.text }}</v-list-item-title>
                     </v-list-item-content>
+                    
                 </v-list-item>
-            </v-list> -->
+            </v-list>
         </v-navigation-drawer>
     </nav>
 </template>
@@ -78,9 +79,13 @@ export default {
             portfolio: true,
             advert: true,
             options: [
-                { icon: 'person', text: 'Konto', route: '/home' },
-                { icon: 'folder', text: 'Dodaj portfolio', route: '/games' },
                 { icon: 'exit_to_app', text: 'Log Out', route: '/ads'}
+            ],
+            navigationList: [
+                { icon: 'person', text: 'Konto', route: '/home' },
+                { icon: 'account_box', text: 'Dodaj portfolio', route: '/games' },
+                { icon: 'folder', text: 'Dodaj ogłoszenie', route: '/about'},
+                { icon: 'exit_to_app', text: 'Log Out', route: '/ads'},
             ]
         };
     }
