@@ -13,5 +13,6 @@ export const store = new Vuex.Store({
     ads: adsModule,
     candidates: candidatesModule,
     break: breakModule
-  }
+  },
+  
 });
