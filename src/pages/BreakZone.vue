@@ -9,6 +9,7 @@
                            <v-img
                             height="250"
                             :src="game.image"
+                            class="ma-5"
                             ></v-img>
                         <v-card-text>
                             <v-card-subtitle>{{ game.author}} </v-card-subtitle>
