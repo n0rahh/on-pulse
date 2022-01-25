@@ -1,21 +1,19 @@
 <template>
     <v-container>
-        <v-card  class="d-flex justify-center align-center" elevation="5" height="50">
+        <v-card  class="d-flex justify-center align-center" elevation="2" height="50">
             <div>FILTER GOES HERE</div>
         </v-card>
         <v-divider></v-divider>
-        <v-list>
-            <ad-item v-for="ad in adsList" :key="ad.id"
-            :id="ad.id"
-            :title="ad.title"
-            :country="ad.country"
-            :stawka="ad.stawka"
-            :short="ad.shortDesc"
-            :long="ad.longDesc"
-            :image="ad.image"
-            >
-            </ad-item>
-        </v-list>
+        <ad-item v-for="ad in adsList" :key="ad.id"
+        :id="ad.id"
+        :title="ad.title"
+        :country="ad.country"
+        :stawka="ad.stawka"
+        :short="ad.shortDesc"
+        :long="ad.longDesc"
+        :image="ad.image"
+        >
+        </ad-item>
 </v-container>
 </template>
 
