@@ -8,10 +8,20 @@
             <v-card-title class="headline deep-purple lighten-2 white--text" primary-title>Add a New Project</v-card-title>
             <v-card-text>
                 <v-form class="pa-3">
-                    <v-text-field label="Title" prepend-icon="folder"></v-text-field>
-                    <v-textarea label="Information" prepend-icon="edit"></v-textarea>
-                    <v-btn large text color="deep-purple lighten-2" @click="tryClose">Dodaj</v-btn>
-                    <v-btn large outlined color="deep-purple lighten-2" @click.prevent="tryClose">Close</v-btn>
+                    <v-text-field label="Tytuł" prepend-icon="folder"></v-text-field>
+                    <v-text-field label="Miasto" prepend-icon="folder"></v-text-field>
+                    <v-text-field label="Stawka brutto" prepend-icon="folder"></v-text-field>
+                    <v-textarea label="Opis" prepend-icon="edit"></v-textarea>
+                    <v-file-input
+                    label="Dodaj zdjęcie"
+                    filled
+                    prepend-icon="mdi-camera">
+                    </v-file-input>
+                    <div class="d-flex flex-row">
+                      <v-btn large outlined color="deep-purple lighten-2" @click="tryClose">Dodaj</v-btn>
+                      <v-spacer></v-spacer>
+                      <v-btn large text color="deep-purple lighten-2" @click.prevent="tryClose">Close</v-btn>
+                    </div>
                 </v-form>
             </v-card-text>
         </v-card>
