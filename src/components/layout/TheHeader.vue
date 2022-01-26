@@ -1,6 +1,7 @@
 <template>
     <section>  
-        <popup-ad :show="clicked" @close="closeDialog"></popup-ad>
+        <popup-ad :show="clickedAd" @close="closeDialog"></popup-ad>
+        <popup-portfolio :open="clickedPortfolio" @close="closeDialog"></popup-portfolio>
         <nav>
             <v-app-bar 
                 app
@@ -42,7 +43,7 @@
                         </v-list-item>
                     </v-list>
                 </v-menu>
-                <v-btn v-if="!logedIn" text color="white">
+                <v-btn to="/login" v-else text color="white">
                     <span>Sign In</span>
                     <v-icon right>exit_to_app</v-icon>
                 </v-btn>
@@ -54,18 +55,21 @@
                         <v-avatar class="grey lighten-2" size="100">
                             <img src="../../assets/avatars/avatar-test.png" />
                         </v-avatar>
-                        <div class="subtitle-1 white--text justify-center mt-5">USER NAME</div>
+                        <div v-if="logedIn" class="subtitle-1 white--text justify-center mt-5">USER NAME</div>
+                         <v-btn v-else to="/login" text color="white">
+                            <span>Sign In</span>
+                            <v-icon right>exit_to_app</v-icon>
+                        </v-btn>
                     </v-col>
                 </v-container>
-                <v-list>
-                    <v-list-item v-for="item in navigationList" :key="item.text" router :to="item.route">
+                <v-list v-if="logedIn">
+                    <v-list-item v-for="item in navigationList" :key="item.text" @click="item.click" router :to="item.route">
                         <v-list-item-action>
                             <v-icon class=" white--text">{{ item.icon }}</v-icon>
                         </v-list-item-action>
                         <v-list-item-content>
                             <v-list-item-title class=" white--text">{{ item.text }}</v-list-item-title>
                         </v-list-item-content>
-                        
                     </v-list-item>
                 </v-list>
             </v-navigation-drawer>
@@ -75,10 +79,12 @@
 
 <script>
 import PopupAd from '../ui/PopupAd.vue';
+import PopupPortfolio from '../ui/PopupPortfolio.vue';
 
 export default {
     components: {
-        PopupAd
+        PopupAd,
+        PopupPortfolio
     },
     data() {
         return {
@@ -91,19 +97,24 @@ export default {
             ],
             navigationList: [
                 { icon: 'person', text: 'Konto', route: '/home' },
-                { icon: 'account_box', text: 'Dodaj portfolio', route: '/games' },
-                { icon: 'folder', text: 'Dodaj ogłoszenie', route: '/about'},
+                { icon: 'account_box', text: 'Dodaj portfolio', click: this.addPortfolio },
+                { icon: 'folder', text: 'Dodaj ogłoszenie', click: this.addNewAd},
                 { icon: 'exit_to_app', text: 'Log Out', route: '/ads'},
             ],
-            clicked: false
+            clickedAd: false,
+            clickedPortfolio: false
         };
     },
     methods: {
         addNewAd() {
-            this.clicked = true;
+            this.clickedAd = true;
+        },
+        addPortfolio() {
+            this.clickedPortfolio = true;
         },
         closeDialog() {
-            this.clicked = false;
+            this.clickedAd = false;
+            this.clickedPortfolio = false;
         },
     }
 }

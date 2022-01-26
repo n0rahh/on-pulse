@@ -1,15 +1,16 @@
 <template>
   <Teleport to="body">
     <transition name="dialog">
-      <v-dialog width='800' v-model="show">
+      <v-dialog width='800' v-model="open">
         <v-card>
-            <v-card-title class="headline deep-purple lighten-2 white--text" primary-title>Dodaj ogłoszenie</v-card-title>
+            <v-card-title class="headline deep-purple lighten-2 white--text" primary-title>Dodaj swoje portfolio!</v-card-title>
             <v-card-text>
                 <v-form class="pa-3">
-                    <v-text-field label="Tytuł" prepend-icon="title"></v-text-field>
+                    <v-text-field label="Imię" prepend-icon="badge"></v-text-field>
+                    <v-text-field label="Nazwisko" prepend-icon="badge"></v-text-field>
                     <v-text-field label="Miasto" prepend-icon="language"></v-text-field>
-                    <v-text-field label="Stawka brutto" prepend-icon="attach_money"></v-text-field>
-                    <v-textarea label="Opis" prepend-icon="edit"></v-textarea>
+                    <v-textarea label="O mnie" prepend-icon="edit"></v-textarea>
+                    <v-text-field label="Specjalizacja" prepend-icon="work"></v-text-field>
                     <v-text-field label="Numer telefonu" prepend-icon="phone"></v-text-field>
                     <v-text-field label="E-Mail" prepend-icon="email"></v-text-field>
                     <v-file-input
@@ -35,7 +36,7 @@
 import Teleport from 'vue2-teleport';
 export default {
    props: {
-        show: {
+        open: {
             type: Boolean,
             required: true,
         },
