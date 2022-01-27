@@ -96,7 +96,7 @@ export default {
                 { icon: 'exit_to_app', text: 'Log Out', route: '/', click: this.logout}
             ],
             navigationList: [
-                { icon: 'person', text: 'Konto', route: '/home' },
+                { icon: 'person', text: 'Konto', route: '/profile', click: ''},
                 { icon: 'account_box', text: 'Dodaj portfolio', click: this.addPortfolio },
                 { icon: 'folder', text: 'Dodaj ogłoszenie', click: this.addNewAd},
                 { icon: 'exit_to_app', text: 'Log Out', route: '/', click: this.logout},

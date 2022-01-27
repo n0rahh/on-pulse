@@ -7,6 +7,7 @@ import Candidates from '../pages/Candidates.vue';
 import BreakZone from '../pages/BreakZone.vue';
 import About from '../pages/About.vue';
 import Login from '../pages/Login.vue';
+import Profile from '../pages/TheProfile.vue';
 
 Vue.use(VueRouter);
 
@@ -44,6 +45,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: About
+  },
+  {
+    path: '/profile',
+    name: 'Profile',
+    component: Profile
   }
 ];
 

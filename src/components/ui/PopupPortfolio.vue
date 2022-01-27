@@ -26,7 +26,7 @@
                 </v-form>
             </v-card-text>
         </v-card>
-        <v-overlay z-index='-1' opacity='0' v-if="show" @click="tryClose"></v-overlay>
+        <v-overlay z-index='-1' opacity='0' v-if="open" @click="tryClose"></v-overlay>
       </v-dialog>
     </transition>
   </Teleport>
