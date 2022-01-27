@@ -38,12 +38,12 @@
                         </v-btn>
                     </template>
                     <v-list>
-                        <v-list-item v-for="option in options" :key="option.text" router :to="option.route">
+                        <v-list-item v-for="option in options" :key="option.text" @click="option.click" router :to="option.route">
                             <v-list-item-title><v-icon left>{{ option.icon }}</v-icon>{{ option.text }}</v-list-item-title>
                         </v-list-item>
                     </v-list>
                 </v-menu>
-                <v-btn to="/login" v-else text color="white">
+                <v-btn v-else to="/login" text color="white">
                     <span>Sign In</span>
                     <v-icon right>exit_to_app</v-icon>
                 </v-btn>
@@ -93,13 +93,13 @@ export default {
             portfolio: true,
             advert: true,
             options: [
-                { icon: 'exit_to_app', text: 'Log Out', route: '/ads'}
+                { icon: 'exit_to_app', text: 'Log Out', route: '/', click: this.logout}
             ],
             navigationList: [
                 { icon: 'person', text: 'Konto', route: '/home' },
                 { icon: 'account_box', text: 'Dodaj portfolio', click: this.addPortfolio },
                 { icon: 'folder', text: 'Dodaj ogłoszenie', click: this.addNewAd},
-                { icon: 'exit_to_app', text: 'Log Out', route: '/ads'},
+                { icon: 'exit_to_app', text: 'Log Out', route: '/', click: this.logout},
             ],
             clickedAd: false,
             clickedPortfolio: false
@@ -116,6 +116,10 @@ export default {
             this.clickedAd = false;
             this.clickedPortfolio = false;
         },
+        logout() {
+            this.logedIn = false;
+
+        }
     }
 }
 </script>
