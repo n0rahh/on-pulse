@@ -18,9 +18,10 @@
                             <div class="mt-10">
                                 <v-text-field label="Imię" type="text" v-model="nameInput" prepend-icon="badge" :rules="nameRule"></v-text-field>
                                 <v-text-field label="Nazwisko" type="text" v-model="surnameInput" prepend-icon="badge" :rules="nameRule"></v-text-field>
-                                <v-text-field label="E-mail" type="email" v-model="emailInput" prepend-icon="email" :rules="loginRule"></v-text-field>
                                 <v-text-field label="Telefon" type="text" v-model="phoneInput" prepend-icon="phone" :rules="phoneRule"></v-text-field>
+                                <v-text-field label="E-mail" type="email" v-model="emailInput" prepend-icon="email" :rules="loginRule"></v-text-field>
                                 <v-text-field label="Hasło" type="password" v-model="passwordInput" prepend-icon="password" :rules="passwordRule"></v-text-field>
+                                <v-textarea outlined label="Informacje o Tobie (opcjonalnie)" type="text" v-model="userInfo" prepend-icon="info"></v-textarea>
                             </div>
                             <div class="d-flex justify-space-between">
                                 <v-btn @click="signupBtn" large dark class="ma-7" color="deep-purple lighten-2">SignUp</v-btn>
@@ -46,6 +47,7 @@ export default {
             surnameInput: '',
             emailInput: '',
             phoneInput: '',
+            userInfo: '',
             loginRule: [
                 login => login.length >= 5 || 'Minimum length is 5 characters'
             ],
