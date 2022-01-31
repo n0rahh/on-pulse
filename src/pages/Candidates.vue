@@ -16,7 +16,7 @@
         <v-container class='mt-15'>
             <v-row>
                 <v-col offset-xl='' xl='2' v-for="candidate in candidates" :key="candidate.id">
-                    <v-card elevation="3" flat class="text-center ma-3">
+                    <v-card elevation="3" flat class="candidate-card text-center ma-3">
                         <v-responsive class='pt-4'>
                             <v-avatar size="100" class="grey lighten-2"><img :src="candidate.image"></v-avatar>
                         </v-responsive>
@@ -24,13 +24,21 @@
                             <div class="subtitle-1 black--text">{{ candidate.name }} {{ candidate.surname }}</div>
                             <div class="grey--text">{{ candidate.specialization }}</div>
                             <div class="grey--text">{{ candidate.country }}</div>
+                            <div v-if="moreInfo" class="more">
+                                <div class="about">
+                                    {{ candidate.aboutInfo }}
+                                </div>
+                                <div class="projects">
+                                    {{ candidate.projectsList }}
+                                </div>
+                            </div>
                         </v-card-text>
                         <v-card-actions>
                             <v-btn text color="grey" @click="openForm">
                                 <v-icon left>message</v-icon>
                                 <span>Kontakt</span>
                             </v-btn>
-                            <v-btn text color="grey">
+                            <v-btn text color="grey" @click="expandMore(candidate.id)">
                                 <v-icon left>expand</v-icon>
                                 <span>More</span>
                             </v-btn>
@@ -50,7 +58,8 @@ export default {
     },
     data() {
         return {
-            clickedContact: false
+            clickedContact: false,
+            moreInfo: false
         };
     },
     computed: {
@@ -64,6 +73,15 @@ export default {
         },
         openForm() {
             this.clickedContact = true;
+        },
+        expandMore(id) {
+            const candidates = this.$store.getters.portfoliosGet;
+            if(candidates[id].id === id) {
+                this.moreInfo = !this.moreInfo;
+            }  
+        },
+        sendForm() {
+            console.log("Form is sent");
         }
     }
 }

@@ -15,18 +15,16 @@ export default new Vuex.Store({
                 specialization: 'Frontend',
                 aboutInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque ',
                 projectsList: [
-                    'Bank page',
-                    'Commerce page',
-                    'Project lorem'
+                    'Partner page',
                 ],
                 image: 'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png'
             },
             {
                 id: 1,
-                name: 'Peter',
-                surname: 'Parker',
-                country: 'Warszawa',
-                specialization: 'Frontend',
+                name: 'Lorem',
+                surname: 'Ipsum',
+                country: 'Łódź',
+                specialization: 'Backend',
                 aboutInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque ',
                 projectsList: [
                     'Bank page',
@@ -37,43 +35,40 @@ export default new Vuex.Store({
             },
             {
                 id: 2,
-                name: 'Peter',
-                surname: 'Parker',
+                name: 'Harry',
+                surname: 'Osborn',
                 country: 'Warszawa',
-                specialization: 'Frontend',
+                specialization: 'Fullstack',
                 aboutInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque ',
                 projectsList: [
                     'Bank page',
-                    'Commerce page',
-                    'Project lorem'
+                    'eCommerce page',
                 ],
                 image: 'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png'
             },
             {
                 id: 3,
-                name: 'Peter',
-                surname: 'Parker',
-                country: 'Warszawa',
-                specialization: 'Frontend',
+                name: 'Harry',
+                surname: 'Potter',
+                country: 'Poznan',
+                specialization: 'Backend',
                 aboutInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque ',
                 projectsList: [
-                    'Bank page',
-                    'Commerce page',
-                    'Project lorem'
+                    'AI chess',
+                    'Robo hand',
                 ],
                 image: 'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png'
             },
             {
                 id: 4,
-                name: 'Peter',
-                surname: 'Parker',
-                country: 'Warszawa',
-                specialization: 'Frontend',
+                name: 'Ronald',
+                surname: 'Redhair',
+                country: 'Gdańsk',
+                specialization: 'UI/UX designer',
                 aboutInfo: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque.Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, iusto neque? A nobis temporibus est, architecto eius, optio porro cumque ',
                 projectsList: [
-                    'Bank page',
-                    'Commerce page',
-                    'Project lorem'
+                    'Carier page',
+                    'HRM integration'
                 ],
                 image: 'https://cdn.pixabay.com/photo/2014/04/03/10/32/businessman-310819_960_720.png'
             }
