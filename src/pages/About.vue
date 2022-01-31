@@ -1,6 +1,14 @@
 <template>
     <section>
-        <popup-contact :info="clickedContact" @close="closeDialog"></popup-contact>
+        <popup-contact :info="clickedContact" @close="closeDialog">
+            <v-text-field label="Imię Nazwisko" prepend-icon="person"></v-text-field>
+            <v-text-field label="Numer telefonu" prepend-icon="phone"></v-text-field>
+            <v-text-field label="E-Mail" prepend-icon="email"></v-text-field>
+            <v-textarea label="Wiadomość" prepend-icon="edit"></v-textarea>
+            <template v-slot:button>
+                <v-btn large outlined color="deep-purple lighten-2" @click="sendForm">Wyślij</v-btn>
+            </template>
+        </popup-contact>
         <v-container class="pa-5">
             <v-card shaped elevation="10">
                 <v-row>

@@ -1,6 +1,19 @@
 <template>
     <section>
-        <popup-contact-ad :info="clickedContact" @close="closeDialog"></popup-contact-ad>
+        <popup-contact :info="clickedContact" @close="closeDialog">
+            <v-text-field label="Imię Nazwisko" prepend-icon="person"></v-text-field>
+            <v-text-field label="Numer telefonu" prepend-icon="phone"></v-text-field>
+            <v-text-field label="E-Mail" prepend-icon="email"></v-text-field>
+            <v-textarea label="Wiadomość" prepend-icon="edit"></v-textarea>
+            <v-file-input
+            label="Dodaj CV"
+            filled
+            prepend-icon="attach_file">
+            </v-file-input>
+            <template v-slot:button>
+                <v-btn large outlined color="deep-purple lighten-2" @click="sendForm">Wyślij</v-btn>
+            </template>
+        </popup-contact>
         <v-container>
             <v-card  class="pl-15 d-flex justify-start align-center" elevation="2" height="50">
                 <h3 class="headline">Filter</h3>
@@ -38,11 +51,11 @@
 
 <script>
 import AdItem from '../components/ads/AdItem.vue';
-import PopupContactAd from '../components/ui/PopupContactAd.vue';
+import PopupContact from '../components/ui/PopupContact.vue';
 export default {
     components: {
         AdItem,
-        PopupContactAd
+        PopupContact
     },
     props: ['searchTerm'],
     emits: ['search'],

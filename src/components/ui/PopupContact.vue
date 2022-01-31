@@ -6,12 +6,9 @@
             <v-card-title class="headline deep-purple lighten-2 white--text" primary-title>Wypełnij formularz kontaktowy</v-card-title>
             <v-card-text>
                 <v-form class="pa-3">
-                    <v-text-field label="Imię Nazwisko" prepend-icon="person"></v-text-field>
-                    <v-text-field label="Numer telefonu" prepend-icon="phone"></v-text-field>
-                    <v-text-field label="E-Mail" prepend-icon="email"></v-text-field>
-                    <v-textarea label="Wiadomość" prepend-icon="edit"></v-textarea>
+                   <slot></slot>
                     <div class="d-flex flex-row">
-                      <v-btn large outlined color="deep-purple lighten-2" @click="tryClose">Wyślij</v-btn>
+                      <slot name="button"></slot>
                       <v-spacer></v-spacer>
                       <v-btn large text color="deep-purple lighten-2" @click.prevent="tryClose">Zamknij</v-btn>
                     </div>

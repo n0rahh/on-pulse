@@ -1,6 +1,15 @@
 <template>
     <section>
-         <v-card class="mt-5 d-flex justify-center align-center" elevation="2" height="50">
+        <popup-contact :info="clickedContact" @close="closeDialog">
+            <v-text-field label="Imię Nazwisko" prepend-icon="person"></v-text-field>
+            <v-text-field label="Numer telefonu" prepend-icon="phone"></v-text-field>
+            <v-text-field label="E-Mail" prepend-icon="email"></v-text-field>
+            <v-textarea label="Wiadomość" prepend-icon="edit"></v-textarea>
+            <template v-slot:button>
+                <v-btn large outlined color="deep-purple lighten-2" @click="sendForm">Wyślij</v-btn>
+            </template>
+        </popup-contact>
+        <v-card class="mt-5 d-flex justify-center align-center" elevation="2" height="50">
             <div>FILTER GOES HERE</div>
         </v-card>
         <v-divider></v-divider>
@@ -17,7 +26,7 @@
                             <div class="grey--text">{{ candidate.country }}</div>
                         </v-card-text>
                         <v-card-actions>
-                            <v-btn text color="grey">
+                            <v-btn text color="grey" @click="openForm">
                                 <v-icon left>message</v-icon>
                                 <span>Kontakt</span>
                             </v-btn>
@@ -34,11 +43,27 @@
 </template>
 
 <script>
-
+import PopupContact from '../components/ui/PopupContact.vue';
 export default {
+    components: {
+        PopupContact
+    },
+    data() {
+        return {
+            clickedContact: false
+        };
+    },
     computed: {
         candidates() {
             return this.$store.getters.portfoliosGet;
+        }
+    },
+    methods: {
+        closeDialog() {
+            this.clickedContact = false;
+        },
+        openForm() {
+            this.clickedContact = true;
         }
     }
 }
