@@ -10,6 +10,11 @@
                     <v-text-field label="Numer telefonu" prepend-icon="phone"></v-text-field>
                     <v-text-field label="E-Mail" prepend-icon="email"></v-text-field>
                     <v-textarea label="Wiadomość" prepend-icon="edit"></v-textarea>
+                    <v-file-input
+                    label="Dodaj CV"
+                    filled
+                    prepend-icon="attach_file">
+                    </v-file-input>
                     <div class="d-flex flex-row">
                       <v-btn large outlined color="deep-purple lighten-2" @click="tryClose">Wyślij</v-btn>
                       <v-spacer></v-spacer>

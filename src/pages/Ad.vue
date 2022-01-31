@@ -1,42 +1,48 @@
 <template>
-    <v-container>
-        <v-card  class="pl-15 d-flex justify-start align-center" elevation="2" height="50">
-            <h3 class="headline">Filter</h3>
-            <v-form class="pl-15 d-flex justify-space-between align-center">
-                <v-text-field class="search-field" @input="search" :value="searchTerm" type="search" placeholder="Szukaj"></v-text-field>
-                 <v-select
-                :items="countries"
-                label="Miasto"
-                style="width: 200px"
-                class="pl-5 mt-3"
-                ></v-select>
-                <v-select
-                :items="salary"
-                label="Stawka od"
-                style="width: 130px"
-                class="pl-5 mt-3"
-                ></v-select>
-            </v-form>
-        </v-card>
-        <v-divider></v-divider>
-        <ad-item v-for="ad in adsList" :key="ad.id"
-        :id="ad.id"
-        :title="ad.title"
-        :country="ad.country"
-        :stawka="ad.stawka"
-        :short="ad.shortDesc"
-        :long="ad.longDesc"
-        :image="ad.image"
-        >
-        </ad-item>
-</v-container>
+    <section>
+        <popup-contact-ad :info="clickedContact" @close="closeDialog"></popup-contact-ad>
+        <v-container>
+            <v-card  class="pl-15 d-flex justify-start align-center" elevation="2" height="50">
+                <h3 class="headline">Filter</h3>
+                <v-form class="pl-15 d-flex justify-space-between align-center">
+                    <v-text-field class="search-field" @input="search" :value="searchTerm" type="search" placeholder="Szukaj"></v-text-field>
+                    <v-select
+                    :items="countries"
+                    label="Miasto"
+                    style="width: 200px"
+                    class="pl-5 mt-3"
+                    ></v-select>
+                    <v-select
+                    :items="salary"
+                    label="Stawka od"
+                    style="width: 130px"
+                    class="pl-5 mt-3"
+                    ></v-select>
+                </v-form>
+            </v-card>
+            <v-divider></v-divider>
+            <ad-item v-for="ad in adsList" :key="ad.id"
+            :id="ad.id"
+            :title="ad.title"
+            :country="ad.country"
+            :stawka="ad.stawka"
+            :short="ad.shortDesc"
+            :long="ad.longDesc"
+            :image="ad.image"
+            >
+                <v-btn large dark color="deep-purple lighten-1" @click="openForm"><v-icon left>attach_email</v-icon>aplikuj</v-btn>
+            </ad-item>
+        </v-container>
+    </section>
 </template>
 
 <script>
 import AdItem from '../components/ads/AdItem.vue';
+import PopupContactAd from '../components/ui/PopupContactAd.vue';
 export default {
     components: {
-        AdItem
+        AdItem,
+        PopupContactAd
     },
     props: ['searchTerm'],
     emits: ['search'],
@@ -44,7 +50,8 @@ export default {
         return {
             countries: ['Szczecin', 'Gorzów Wielkopolski', 'Zielona Góra', 'Poznań', 'Gniezno', 'Gdynia', 'Gdańsk', 'Olsztyn', 'Bydgoszcz', 'Toruń', 'Płock', 'Białystok', 'Warszawa',
             'Łódź', 'Kazimierz Dolny', 'Lublin', 'Opole', 'Częstochowa', 'Kielce', 'Sandomierz', 'Zamość', 'Katowice', 'Kraków', 'Tarnów', 'Rzeszów', 'Przemyśl'],
-            salary: []
+            salary: [],
+            clickedContact: false
         };
     },
     methods: {
@@ -55,6 +62,12 @@ export default {
             for(let i=12; i<=50; i++) {
                 this.salary.push(i);
             }  
+        },
+        closeDialog() {
+            this.clickedContact = false;
+        },
+        openForm() {
+            this.clickedContact = true;
         }
     },
     computed: {
