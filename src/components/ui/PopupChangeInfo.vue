@@ -6,11 +6,12 @@
             <v-card-title class="headline deep-purple lighten-2 white--text" primary-title>Informacja</v-card-title>
             <v-card-text>
                 <v-form class="pa-3">
-                    <v-text-field label="Imię Nazwisko" :value="name + ' ' + surname" prepend-icon="person"></v-text-field>
-                    <v-text-field label="Country" :value="country" prepend-icon="language"></v-text-field>
-                    <v-text-field label="E-Mail" :value="email" prepend-icon="email"></v-text-field>
-                    <v-text-field label="Numer telefonu" :value="number" prepend-icon="phone"></v-text-field>
-                    <v-textarea label="O mnie" :value="aboutInfo" prepend-icon="edit"></v-textarea>
+                    <v-text-field label="Imię" prepend-icon="person" v-model="nameInput"></v-text-field>
+                    <v-text-field label="Nazwisko" prepend-icon="person" v-model="surnameInput"></v-text-field>
+                    <v-text-field label="Country" prepend-icon="language" v-model="countryInput"></v-text-field>
+                    <v-text-field label="E-Mail" prepend-icon="email" v-model="emailInput"></v-text-field>
+                    <v-text-field label="Numer telefonu" prepend-icon="phone" v-model="numberInput"></v-text-field>
+                    <v-textarea label="O mnie" prepend-icon="edit" v-model="aboutInfoInput"></v-textarea>
                     <div class="d-flex flex-row">
                       <v-btn large outlined color="deep-purple lighten-2" @click.prevent="tryChange">Zmień</v-btn>
                       <v-spacer></v-spacer>
@@ -64,15 +65,20 @@ export default {
   },
   data() {
       return {
-          
+          nameInput: this.name,
+          surnameInput: this.surname,
+          countryInput: this.country,
+          emailInput: this.email,
+          numberInput: this.number,
+          aboutInfoInput: this.aboutInfo
       };
   },
   methods: {
     tryClose() {
-      this.$emit('close');
+        this.$emit('close');
     },
     tryChange() {
-        this.$emit('changeData');
+        this.$emit('changeData', { name: this.nameInput, surname: this.surnameInput, country: this.countryInput, email: this.emailInput, number: this.numberInput, aboutInfo: this.aboutInfoInput });
     }
   },
 };

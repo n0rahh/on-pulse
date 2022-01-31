@@ -9,7 +9,9 @@
         :country="profile.country"
         :aboutInfo="profile.aboutInfo"
         :email="profile.email"
-        :number="profile.number"></popup-change-info>
+        :number="profile.number"
+        >
+        </popup-change-info>
         <v-container class="pa-10">
             <v-row class="profile-bg">
                 <v-col offset-xl="2" xl="1">
@@ -90,8 +92,15 @@ export default {
         openForm() {
             this.clickedChange = true;
         },
-        changeData() {
+        changeData(item) {
             console.log('Data has been changed!');
+            this.profile.name = item.name;
+            this.profile.surname = item.surname;
+            this.profile.country = item.country;
+            this.profile.aboutInfo = item.aboutInfo;
+            this.profile.email = item.email;
+            this.profile.number = item.number;
+
             this.clickedChange = false;
         }
     },
