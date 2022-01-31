@@ -19,7 +19,8 @@
                     color="grey lighten-2"
                     size="100"
                     >
-                        <img src="../assets/avatars/avatar-test.png" alt="#">
+                        <img v-if="!profile.avatar" src="../assets/avatars/avatar-test.png" alt="#">
+                        <img v-else :src="profile.avatar" alt="#">
                     </v-avatar>
                 </v-col>
                 <v-col xl="4">
@@ -75,7 +76,8 @@ export default {
                 aboutInfo: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga natus, culpa voluptatibus explicabo modi eligendi enim animi voluptatum quae numquam, unde saepe, ratione non quidem ut odit ipsam cumque consequatur.' +
                 'Labore dolorum eos corrupti. Sint deserunt fugiat pariatur esse dolores hic accusantium voluptate quisquam possimus sapiente! Consequuntur autem ducimus dicta tempora saepe aperiam neque vero iusto! Consequatur fuga nulla neque?',
                 email: 'parker@marvel.pl',
-                number: '+48700800900'
+                number: '+48700800900',
+                avatar: null
             },
             clickedChange: false
         };
@@ -100,7 +102,7 @@ export default {
             this.profile.aboutInfo = item.aboutInfo;
             this.profile.email = item.email;
             this.profile.number = item.number;
-
+            this.profile.avatar = item.image;
             this.clickedChange = false;
         }
     },

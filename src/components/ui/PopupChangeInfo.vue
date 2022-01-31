@@ -12,6 +12,12 @@
                     <v-text-field label="E-Mail" prepend-icon="email" v-model="emailInput"></v-text-field>
                     <v-text-field label="Numer telefonu" prepend-icon="phone" v-model="numberInput"></v-text-field>
                     <v-textarea label="O mnie" prepend-icon="edit" v-model="aboutInfoInput"></v-textarea>
+                    <v-file-input
+                    label="Dodaj zdjęcie"
+                    filled
+                    @change="onFileChange($event)"
+                    prepend-icon="attach_file">
+                    </v-file-input>
                     <div class="d-flex flex-row">
                       <v-btn large outlined color="deep-purple lighten-2" @click.prevent="tryChange">Zmień</v-btn>
                       <v-spacer></v-spacer>
@@ -70,15 +76,28 @@ export default {
           countryInput: this.country,
           emailInput: this.email,
           numberInput: this.number,
-          aboutInfoInput: this.aboutInfo
+          aboutInfoInput: this.aboutInfo,
+          imageURL: null
       };
   },
   methods: {
     tryClose() {
         this.$emit('close');
     },
+    onFileChange(e) {
+        this.imageURL = URL.createObjectURL(e);
+    },
     tryChange() {
-        this.$emit('changeData', { name: this.nameInput, surname: this.surnameInput, country: this.countryInput, email: this.emailInput, number: this.numberInput, aboutInfo: this.aboutInfoInput });
+        this.$emit('changeData', 
+        { 
+            name: this.nameInput, 
+            surname: this.surnameInput, 
+            country: this.countryInput, 
+            email: this.emailInput, 
+            number: this.numberInput, 
+            aboutInfo: this.aboutInfoInput ,
+            image: this.imageURL
+        });
     }
   },
 };
