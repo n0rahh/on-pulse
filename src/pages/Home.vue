@@ -20,9 +20,8 @@
                    Dzięki funkcji „Otwarty(-a) na oferty pracy” możesz prywatnie poinformować rekruterów lub publicznie podzielić się ze społecznością LinkedIn informacją, że szukasz nowych możliwości kariery.
                  </p>
                  <div align="right" class="pa-5 mt-15 button">
-                    <v-btn outlined color="deep-purple darken-2">GET STARTED</v-btn>
+                    <v-btn outlined to="/login" color="deep-purple darken-2">GET STARTED</v-btn>
                  </div>
-                 
             </v-col>
             <v-col cols='12' md='12' sm='12' lg='12' xl="6" class="second-bg">
             </v-col>
