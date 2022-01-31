@@ -1,7 +1,7 @@
 <template>
     <v-container class="pa-10">
         <v-row class="profile-bg">
-            <v-col offset-xl="3" xl="1">
+            <v-col offset-xl="2" xl="1">
                 <v-avatar
                 color="grey lighten-2"
                 size="100"
@@ -16,6 +16,13 @@
                 Labore dolorum eos corrupti. Sint deserunt fugiat pariatur esse dolores hic accusantium voluptate quisquam possimus sapiente! Consequuntur autem ducimus dicta tempora saepe aperiam neque vero iusto! Consequatur fuga nulla neque?</p>
                 <div class="d-flex justify-end">
                     <v-btn dark color="deep-purple lighten-2">Zmień<v-icon right>edit</v-icon></v-btn>
+                </div>
+            </v-col>
+            <v-col offset-xl="1" xl="3">
+                <div class="display-1 white--text">Informacje kontaktowe:</div>
+                <div style="border: 2px solid white" class="pa-3 contact-info">
+                    <div class="email title white--text">E-mail: parker@marvel.pl</div>
+                    <div class="phone title white--text">Telefon: +48700800900</div>
                 </div>
             </v-col>
         </v-row>
