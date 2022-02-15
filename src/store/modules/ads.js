@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const storeAds =  new Vuex.Store({
   namespaced: true,
   state: {
         adsList: [
@@ -41,11 +41,25 @@ export default new Vuex.Store({
             arr.push(i);
         }  
         state.salary.push(arr); 
+      },
+      addToList(state, payload) {
+        state.adsList.push(payload)
       }
   },
   actions: {
     salaryList(context) {
         context.commit('salaryList');
+    },
+    addItemToAdList(context, payload) {
+        const arr = {
+            id: payload.id,
+            title: payload.title,
+            country: payload.country,
+            stawka: payload.stawka,
+            longDesc: payload.longDesc,
+            image: payload.image
+        };
+        context.commit('addToList', arr);
     }
   },
   getters: {
@@ -57,3 +71,5 @@ export default new Vuex.Store({
       }
   }
 });
+
+export default storeAds;

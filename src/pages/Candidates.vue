@@ -10,7 +10,7 @@
             </template>
         </popup-contact>
         <v-card class="mt-5 d-flex justify-center align-center" elevation="2" height="50">
-            <div>FILTER GOES HERE</div>
+            <h2>Zobaczy naszych kandydatów</h2>
         </v-card>
         <v-divider></v-divider>
         <v-container class='mt-15'>

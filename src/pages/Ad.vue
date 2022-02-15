@@ -11,27 +11,12 @@
             prepend-icon="attach_file">
             </v-file-input>
             <template v-slot:button>
-                <v-btn large outlined color="deep-purple lighten-2" @click="sendForm">Wyślij</v-btn>
+                <v-btn large outlined color="deep-purple lighten-2">Wyślij</v-btn>
             </template>
         </popup-contact>
         <v-container>
-            <v-card  class="pl-15 d-flex justify-start align-center" elevation="2" height="50">
-                <h3 class="headline">Filter</h3>
-                <v-form class="pl-15 d-flex justify-space-between align-center">
-                    <v-text-field class="search-field" @input="search" :value="searchTerm" type="search" placeholder="Szukaj"></v-text-field>
-                    <v-select
-                    :items="countries"
-                    label="Miasto"
-                    style="width: 200px"
-                    class="pl-5 mt-3"
-                    ></v-select>
-                    <v-select
-                    :items="salary"
-                    label="Stawka od"
-                    style="width: 130px"
-                    class="pl-5 mt-3"
-                    ></v-select>
-                </v-form>
+            <v-card class="mt-5 d-flex justify-center align-center" elevation="2" height="50">
+                <h2>Zobacz wszystkie ogłoszenia</h2>
             </v-card>
             <v-divider></v-divider>
             <ad-item v-for="ad in adsList" :key="ad.id"
@@ -57,14 +42,15 @@ export default {
         AdItem,
         PopupContact
     },
-    props: ['searchTerm'],
-    emits: ['search'],
+    // props: ['searchTerm'],
+    // emits: ['search'],
     data() {
         return {
             countries: ['Szczecin', 'Gorzów Wielkopolski', 'Zielona Góra', 'Poznań', 'Gniezno', 'Gdynia', 'Gdańsk', 'Olsztyn', 'Bydgoszcz', 'Toruń', 'Płock', 'Białystok', 'Warszawa',
             'Łódź', 'Kazimierz Dolny', 'Lublin', 'Opole', 'Częstochowa', 'Kielce', 'Sandomierz', 'Zamość', 'Katowice', 'Kraków', 'Tarnów', 'Rzeszów', 'Przemyśl'],
             salary: [],
-            clickedContact: false
+            clickedContact: false,
+            countryItem: ''
         };
     },
     methods: {
@@ -81,7 +67,7 @@ export default {
         },
         openForm() {
             this.clickedContact = true;
-        }
+        },
     },
     computed: {
         adsList() {

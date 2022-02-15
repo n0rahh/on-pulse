@@ -3,7 +3,7 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const storeCandidates = new Vuex.Store({
   namespaced: true,
   state: {
         portfoliosList: [
@@ -75,8 +75,23 @@ export default new Vuex.Store({
         ]
   },
   mutations: {
+      addCandidate(state, payload) {
+          state.portfoliosList.push(payload);
+      }
   },
   actions: {
+      addOneCandidate(context, payload) {
+        const arr = {
+            id: payload.id,
+            name: payload.name,
+            surname: payload.surname,
+            country: payload.country,
+            specialization: payload.specialization,
+            aboutInfo: payload.aboutInfo,
+            image: payload.image
+        };
+        context.commit('addCandidate', arr);
+      }
   },
   getters: {
       portfoliosGet() {
@@ -84,3 +99,5 @@ export default new Vuex.Store({
       }
   }
 });
+
+export default storeCandidates;
